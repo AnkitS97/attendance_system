@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance System</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container pt-5">
+        <div class="card border-info mb-3">
+            <div class="card-header text-center">
+                <h3>Attendance System</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <a href="#" id="addnew"><button class="btn btn-primary">Add New Employee</button></a>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <a href="#" id="check"><button class="btn btn-primary">Mark Attendance</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script type=text/javascript>
+        $(function() {
+          $('a#addnew').on('click', function(e) {
+            e.preventDefault()
+            $.getJSON('/add_new',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
+        });
+</script>
